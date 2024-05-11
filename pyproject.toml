@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "hubspotpublicappcli"
+version = "0.1.0"
+description = ""
+authors = ["TomohiroHiratsuka"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+hubspot-api-client = "^9.0.0"
+fire = "^0.6.0"
+python-dotenv = "^1.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

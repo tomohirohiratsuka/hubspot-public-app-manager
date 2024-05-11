@@ -1,0 +1,6 @@
+.env
+.env.local
+.env.staging
+.env.production
+**/__pycache__
+.idea
