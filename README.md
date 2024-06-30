@@ -16,26 +16,36 @@ cp .env.example .env.{ENV}
 ```terminal
 .
 ├── README.md
-├── actions -> action template classes
-│   └── base_action.py
-├── cards -> card template classes
-│   └── base_card.py
-├── commands -> public app commands
+├── actions
+│   ├── base_action.py
+│   └── example_send_message_action.py
+├── cards
+│   ├── base_card.py
+│   └── example_card.py
+├── commands
+│   ├── __init__.py
+│   ├── card_command.py
+│   ├── timeline_command.py
 │   └── workflow_command.py
-├── config -> configurations
+├── config
 │   └── settings.py
 ├── exceptions
-│   └── action_not_found_error.py
+│   ├── action_not_found_error.py
+│   ├── card_not_found_error.py
+│   └── timeline_not_found_error.py
 ├── main.py
 ├── poetry.lock
-└── pyproject.toml
+├── pyproject.toml
+└── timelines
+    ├── base_timeline.py
+    └── example_timeline.py
 ```
 
 # Workflow Commands Basics
 ```terminal
 python main.py -e {ENV} {COMMAND_TARGET} {COMMAND} {COMMAND_ARGS}
 ```
-`COMMAND_TARGET` is `workflow` or `card` or custom target defined under commands directory.
+`COMMAND_TARGET` is `workflow` or `card` or `timeline` custom target defined under commands directory.
 
 # Examples
 

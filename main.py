@@ -2,6 +2,7 @@ import argparse
 import fire
 
 from commands.card_command import CardCommand
+from commands.timeline_command import TimelineCommand
 from commands.workflow_command import WorkflowCommand
 from config.settings import Config
 
@@ -24,11 +25,13 @@ def main():
 	config = Config(env=args.env)
 	workflow_command = WorkflowCommand(config)
 	card_command = CardCommand(config)
+	timeline_command = TimelineCommand(config)
 
 	if remaining_argv:
 		fire.Fire({
 			'workflow': workflow_command,
-			'card': card_command
+			'card': card_command,
+			'timeline': timeline_command,
 		}, command=remaining_argv)
 	else:
 		fire.Fire(workflow_command)
